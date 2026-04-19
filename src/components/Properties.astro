@@ -2,75 +2,36 @@
 const properties = [
   {
     id: 1,
-    name: "The Boone Street House",
-    type: "3-Bedroom House",
-    price: "$1,850/mo",
-    distance: "0.4 mi to campus",
-    available: "August 2025",
-    features: ["Covered parking", "Fenced yard", "Washer/dryer", "Updated kitchen"],
-    description: "A classic Gonzaga-area bungalow on a quiet tree-lined block. Three generous bedrooms, a full dining room, and a backyard porch that's earned a few late-night study sessions.",
-    badge: "Popular",
-    badgeColor: "#b5541c",
+    name: "402 East Mission",
+    type: "4-Bedroom House",
+    price: "$3,200/mo",
+    beds: "4",
+    baths: "2",
+    description: "A spacious four-bedroom, two-bathroom home on East Mission — one of the most sought-after streets near Gonzaga's campus. Room for a full house of students or a family that wants to be close to everything the university neighborhood offers.",
+    badge: null,
+    badgeColor: null,
   },
   {
     id: 2,
-    name: "Hamilton Court #4",
-    type: "2-Bedroom Apartment",
-    price: "$1,295/mo",
-    distance: "0.6 mi to campus",
-    available: "July 2025",
-    features: ["On-site laundry", "Off-street parking", "Heat included", "Quiet building"],
-    description: "A well-maintained upper-floor apartment in a small six-unit building. Bright south-facing windows, updated bathroom, and a landlord who actually answers the phone.",
-    badge: "Heat Included",
+    name: "1608 North Astor",
+    type: "6-Bedroom House",
+    price: "$4,200/mo",
+    beds: "6",
+    baths: "3",
+    description: "A large six-bedroom, three-bathroom home on North Astor. Plenty of space for a big group, with room to spread out across multiple floors. North Astor is a quiet, tree-lined street in the heart of the Gonzaga neighborhood.",
+    badge: "Large Group",
     badgeColor: "#3d5a6e",
   },
   {
     id: 3,
-    name: "Standard Ave Studio",
-    type: "Studio Apartment",
-    price: "$895/mo",
-    distance: "0.9 mi to campus",
-    available: "June 2025",
-    features: ["All utilities included", "Bike storage", "Walk to Safeway", "Internet ready"],
-    description: "Everything you need, nothing you don't. A clean, quiet studio with all utilities covered. Perfect for a focused grad student or someone who just wants simple done right.",
-    badge: "All Utilities",
-    badgeColor: "#3d5a6e",
-  },
-  {
-    id: 4,
-    name: "The Corkery House",
-    type: "4-Bedroom House",
-    price: "$2,400/mo",
-    distance: "0.5 mi to campus",
-    available: "August 2025",
-    features: ["Two full baths", "Large living room", "Two-car garage", "Modern appliances"],
-    description: "One of our most sought-after houses. Four bedrooms across two floors, two full baths, and a living room big enough for everyone. A perennial favorite with GU seniors.",
-    badge: "Most Space",
+    name: "1919 / 1933 / 1945 North Astor",
+    type: "6–7 Bedroom Houses",
+    price: "$4,900/mo",
+    beds: "6–7",
+    baths: "3",
+    description: "Three homes on the same block of North Astor, each offering six or seven bedrooms and three bathrooms. Ideal for larger groups or students who want to live close to their housemates. Inquire to find out which units are currently available.",
+    badge: "Multiple Available",
     badgeColor: "#b5541c",
-  },
-  {
-    id: 5,
-    name: "Nora Ave 1-Bedroom",
-    type: "1-Bedroom Apartment",
-    price: "$1,050/mo",
-    distance: "0.7 mi to campus",
-    available: "Available Now",
-    features: ["Pet friendly", "In-unit laundry", "Private entrance", "Covered deck"],
-    description: "A charming ground-floor apartment with its own entrance and a covered porch. Pet-friendly, in-unit laundry, and a private feel that's rare at this price point.",
-    badge: "Pet Friendly",
-    badgeColor: "#5a7a8e",
-  },
-  {
-    id: 6,
-    name: "Pearl Street Flat",
-    type: "2-Bedroom Apartment",
-    price: "$1,395/mo",
-    distance: "0.8 mi to campus",
-    available: "August 2025",
-    features: ["Hardwood floors", "High ceilings", "Dedicated parking", "Sunlit rooms"],
-    description: "A top-floor flat in a classic Spokane craftsman-conversion building. Original hardwood floors, high ceilings, and light that reminds you why people love this city.",
-    badge: null,
-    badgeColor: null,
   },
 ];
 ---
@@ -80,18 +41,17 @@ const properties = [
     <div class="mb-16">
       <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#b5541c] mb-4">Available Rentals</p>
       <h2 class="text-4xl md:text-5xl font-light text-[#2a3f50] leading-tight max-w-xl" style="font-family: 'Fraunces', serif;">
-        Properties worth<br/><em>staying in.</em>
+        Real homes.<br/><em>Real addresses.</em>
       </h2>
-      <p class="mt-4 text-[#5a7a8e] max-w-lg">All within a mile of Gonzaga's campus. All maintained by owners who live nearby.</p>
+      <p class="mt-4 text-[#5a7a8e] max-w-lg">All within walking distance of Gonzaga's campus. Email us at <a href="mailto:guhouses@gmail.com" class="text-[#b5541c] hover:underline">guhouses@gmail.com</a> to inquire about any property.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6">
       {properties.map(p => (
         <div class="bg-white border border-[#ede7dc] flex flex-col hover:shadow-md transition-shadow duration-200">
-          <!-- Property image placeholder with character -->
+          <!-- Property illustration header -->
           <div class="h-44 bg-[#e8eef2] relative flex items-end p-4">
             <div class="absolute inset-0 bg-gradient-to-br from-[#3d5a6e]/20 to-[#2a3f50]/40"></div>
-            <!-- SVG house illustration -->
             <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 300 176" fill="none">
               <rect x="60" y="80" width="180" height="96" fill="#2a3f50"/>
               <path d="M40 80 L150 20 L260 80Z" fill="#3d5a6e"/>
@@ -108,22 +68,25 @@ const properties = [
           </div>
 
           <div class="p-6 flex flex-col flex-1">
-            <div class="mb-1 flex items-center justify-between">
+            <div class="mb-1">
               <span class="text-[10px] tracking-widest uppercase text-[#9ab0bc]">{p.type}</span>
-              <span class="text-[10px] tracking-wide text-[#5a7a8e]">{p.distance}</span>
             </div>
             <h3 class="text-xl font-medium text-[#2a3f50] mb-3" style="font-family: 'Fraunces', serif;">{p.name}</h3>
             <p class="text-sm text-[#5a6b70] leading-relaxed mb-4 flex-1">{p.description}</p>
 
-            <ul class="flex flex-wrap gap-2 mb-5">
-              {p.features.map(f => (
-                <li class="text-[11px] bg-[#e8eef2] text-[#3d5a6e] px-2 py-1">{f}</li>
-              ))}
-            </ul>
+            <div class="flex gap-4 mb-5">
+              <div class="flex items-center gap-2 text-sm text-[#3d5a6e]">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                <span>{p.beds} bed</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#3d5a6e]">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>{p.baths} bath</span>
+              </div>
+            </div>
 
-            <div class="flex items-center justify-between pt-4 border-t border-[#ede7dc]">
-              <span class="text-[11px] text-[#9ab0bc] uppercase tracking-wide">Available: {p.available}</span>
-              <a href="#contact" class="text-sm text-[#b5541c] font-medium hover:underline">Inquire →</a>
+            <div class="pt-4 border-t border-[#ede7dc]">
+              <a href="#contact" class="text-sm text-[#b5541c] font-medium hover:underline">Inquire about this property →</a>
             </div>
           </div>
         </div>
@@ -131,9 +94,9 @@ const properties = [
     </div>
 
     <div class="mt-12 text-center">
-      <p class="text-sm text-[#5a7a8e] mb-4">Don't see the right fit? We often have unlisted properties.</p>
-      <a href="#contact" class="inline-block border border-[#3d5a6e] text-[#3d5a6e] px-8 py-3 text-sm tracking-wide hover:bg-[#3d5a6e] hover:text-[#f7f3ee] transition-colors">
-        Ask About Other Options
+      <p class="text-sm text-[#5a7a8e] mb-4">Questions about a property? Email us directly.</p>
+      <a href="mailto:guhouses@gmail.com" class="inline-block border border-[#3d5a6e] text-[#3d5a6e] px-8 py-3 text-sm tracking-wide hover:bg-[#3d5a6e] hover:text-[#f7f3ee] transition-colors">
+        guhouses@gmail.com
       </a>
     </div>
   </div>
