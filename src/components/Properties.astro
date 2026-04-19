@@ -10,6 +10,7 @@ const properties = [
     description: "A spacious four-bedroom, two-bathroom home on East Mission — one of the most sought-after streets near Gonzaga's campus. Room for a full house of students or a family that wants to be close to everything the university neighborhood offers.",
     badge: null,
     badgeColor: null,
+    photo: "/gonzaga-rentals/images/property-1.jpg",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const properties = [
     description: "A large six-bedroom, three-bathroom home on North Astor. Plenty of space for a big group, with room to spread out across multiple floors. North Astor is a quiet, tree-lined street in the heart of the Gonzaga neighborhood.",
     badge: "Large Group",
     badgeColor: "#3d5a6e",
+    photo: null,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const properties = [
     description: "Three homes on the same block of North Astor, each offering six or seven bedrooms and three bathrooms. Ideal for larger groups or students who want to live close to their housemates. Inquire to find out which units are currently available.",
     badge: "Multiple Available",
     badgeColor: "#b5541c",
+    photo: null,
   },
 ];
 ---
@@ -49,18 +52,24 @@ const properties = [
     <div class="grid md:grid-cols-3 gap-6">
       {properties.map(p => (
         <div class="bg-white border border-[#ede7dc] flex flex-col hover:shadow-md transition-shadow duration-200">
-          <!-- Property illustration header -->
-          <div class="h-44 bg-[#e8eef2] relative flex items-end p-4">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#3d5a6e]/20 to-[#2a3f50]/40"></div>
-            <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 300 176" fill="none">
-              <rect x="60" y="80" width="180" height="96" fill="#2a3f50"/>
-              <path d="M40 80 L150 20 L260 80Z" fill="#3d5a6e"/>
-              <rect x="120" y="110" width="40" height="66" fill="#f7f3ee"/>
-              <rect x="80" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
-              <rect x="185" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
-            </svg>
+          <!-- Property image header -->
+          <div class="h-52 bg-[#e8eef2] relative flex items-end p-4 overflow-hidden">
+            {p.photo ? (
+              <img src={p.photo} alt={p.name} class="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <>
+                <div class="absolute inset-0 bg-gradient-to-br from-[#3d5a6e]/20 to-[#2a3f50]/40"></div>
+                <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 300 176" fill="none">
+                  <rect x="60" y="80" width="180" height="96" fill="#2a3f50"/>
+                  <path d="M40 80 L150 20 L260 80Z" fill="#3d5a6e"/>
+                  <rect x="120" y="110" width="40" height="66" fill="#f7f3ee"/>
+                  <rect x="80" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
+                  <rect x="185" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
+                </svg>
+              </>
+            )}
             <div class="relative z-10 flex items-end justify-between w-full">
-              <span class="text-2xl font-light text-[#f7f3ee]" style="font-family: 'Fraunces', serif;">{p.price}</span>
+              <span class="text-2xl font-light text-[#f7f3ee] drop-shadow" style="font-family: 'Fraunces', serif;">{p.price}</span>
               {p.badge && (
                 <span class="text-[10px] font-medium tracking-widest uppercase px-3 py-1 text-[#f7f3ee]" style={`background-color: ${p.badgeColor};`}>{p.badge}</span>
               )}
