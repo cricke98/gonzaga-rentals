@@ -1,0 +1,46 @@
+---
+---
+<footer class="bg-[#2a3f50] border-t border-[#3d5a6e]">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-[#3d5a6e]">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-[#3d5a6e] flex items-center justify-center">
+            <span class="text-[#f7f3ee] text-xs font-medium" style="font-family: 'Fraunces', serif;">GR</span>
+          </div>
+          <span class="text-[#f7f3ee] font-medium tracking-wide text-sm" style="font-family: 'Fraunces', serif;">Gonzaga Rentals</span>
+        </div>
+        <p class="text-[#9ab0bc] text-sm leading-relaxed">
+          Family-owned rentals near Gonzaga University. Spokane-rooted since 2008.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-[#f7f3ee] text-xs tracking-widest uppercase mb-4">Navigate</p>
+        <ul class="space-y-2">
+          {['#properties|Properties', '#about|About Us', '#why-us|Why Us', '#testimonials|Reviews', '#contact|Contact'].map(item => {
+            const [href, label] = item.split('|');
+            return (
+              <li><a href={href} class="text-sm text-[#9ab0bc] hover:text-[#f7f3ee] transition-colors">{label}</a></li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[#f7f3ee] text-xs tracking-widest uppercase mb-4">Contact</p>
+        <ul class="space-y-3 text-sm text-[#9ab0bc]">
+          <li>(509) 555-0182</li>
+          <li>hello@gonzagarentals.com</li>
+          <li>East Spokane, WA 99202</li>
+          <li class="pt-2 text-[#5a7a8e] text-xs">Mon–Fri 8am–6pm · Sat 9am–3pm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[#5a7a8e] text-xs">© 2025 Gonzaga Rentals. All rights reserved.</p>
+      <p class="text-[#5a7a8e] text-xs">Equal Housing Opportunity · WA State Licensed Rental Operator</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+---
+---
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#f7f3ee]/95 backdrop-blur-sm border-b border-[#ede7dc]">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/gonzaga-rentals/" class="flex items-center gap-3">
+      <div class="w-8 h-8 bg-[#3d5a6e] flex items-center justify-center">
+        <span class="text-[#f7f3ee] text-xs font-medium tracking-widest" style="font-family: 'Fraunces', serif;">GR</span>
+      </div>
+      <span class="text-[#2a3f50] font-medium tracking-wide text-sm" style="font-family: 'Fraunces', serif;">Gonzaga Rentals</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      <li><a href="#properties" class="text-sm text-[#3d5a6e] hover:text-[#b5541c] transition-colors">Properties</a></li>
+      <li><a href="#about" class="text-sm text-[#3d5a6e] hover:text-[#b5541c] transition-colors">About</a></li>
+      <li><a href="#why-us" class="text-sm text-[#3d5a6e] hover:text-[#b5541c] transition-colors">Why Us</a></li>
+      <li><a href="#testimonials" class="text-sm text-[#3d5a6e] hover:text-[#b5541c] transition-colors">Reviews</a></li>
+      <li>
+        <a href="#contact" class="text-sm bg-[#3d5a6e] text-[#f7f3ee] px-5 py-2 hover:bg-[#2a3f50] transition-colors">
+          Get in Touch
+        </a>
+      </li>
+    </ul>
+
+    <button id="menu-btn" class="md:hidden text-[#3d5a6e]" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-[#f7f3ee] border-t border-[#ede7dc] px-6 py-4">
+    <ul class="flex flex-col gap-4">
+      <li><a href="#properties" class="text-sm text-[#3d5a6e]">Properties</a></li>
+      <li><a href="#about" class="text-sm text-[#3d5a6e]">About</a></li>
+      <li><a href="#why-us" class="text-sm text-[#3d5a6e]">Why Us</a></li>
+      <li><a href="#testimonials" class="text-sm text-[#3d5a6e]">Reviews</a></li>
+      <li><a href="#contact" class="text-sm text-[#b5541c] font-medium">Get in Touch</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

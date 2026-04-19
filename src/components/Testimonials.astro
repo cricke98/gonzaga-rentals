@@ -1,0 +1,57 @@
+---
+const testimonials = [
+  {
+    quote: "We were nervous putting our daughter in a rental far from home. Tom answered the phone on our first call, walked us through everything, and followed up after move-in to make sure she was settled. That kind of care stays with you.",
+    name: "Margaret O'Brien",
+    role: "Parent of GU Class of 2024 student",
+    initial: "M",
+  },
+  {
+    quote: "I've rented three apartments in Spokane and this is the first time I got my full deposit back without a fight. The place was exactly how they described it. I renewed for a second year without even looking anywhere else.",
+    name: "Darius Khoury",
+    role: "GU Law School, third year",
+    initial: "D",
+  },
+  {
+    quote: "Our furnace stopped working in January. Linda texted me back within fifteen minutes and Tom had it fixed the same afternoon. I've had landlords take weeks. These two actually care about their properties.",
+    name: "Sofia Reyes",
+    role: "GU Nursing, graduated 2023",
+    initial: "S",
+  },
+  {
+    quote: "Four of us shared the Corkery house for two years. Not once did we have a problem that didn't get handled fast and without attitude. Honest people. Honest lease. We miss it now that we've all moved away.",
+    name: "Ben Calloway",
+    role: "GU Class of 2023",
+    initial: "B",
+  },
+];
+---
+
+<section id="testimonials" class="py-24 bg-[#f7f3ee]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-16 max-w-xl">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#b5541c] mb-4">What Tenants Say</p>
+      <h2 class="text-4xl md:text-5xl font-light text-[#2a3f50] leading-tight" style="font-family: 'Fraunces', serif;">
+        In their<br/><em>own words.</em>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {testimonials.map((t, i) => (
+        <div class={`p-8 border ${i % 2 === 0 ? 'bg-white border-[#ede7dc]' : 'bg-[#e8eef2] border-[#c8d8e0]'}`}>
+          <div class="text-3xl text-[#b5541c] mb-4" style="font-family: 'Fraunces', serif;">"</div>
+          <p class="text-[#2c2c2c] leading-relaxed mb-8 text-[15px]">{t.quote}</p>
+          <div class="flex items-center gap-4 pt-4 border-t border-[#ede7dc]">
+            <div class="w-10 h-10 rounded-full bg-[#3d5a6e] flex items-center justify-center text-[#f7f3ee] text-sm font-medium flex-shrink-0">
+              {t.initial}
+            </div>
+            <div>
+              <p class="text-sm font-medium text-[#2a3f50]" style="font-family: 'Fraunces', serif;">{t.name}</p>
+              <p class="text-xs text-[#9ab0bc] mt-0.5">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

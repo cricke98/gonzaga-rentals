@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --color-slate: #3d5a6e;
+  --color-slate-light: #5a7a8e;
+  --color-slate-dark: #2a3f50;
+  --color-cream: #f7f3ee;
+  --color-cream-dark: #ede7dc;
+  --color-sienna: #b5541c;
+  --color-sienna-light: #c96a30;
+  --color-charcoal: #2c2c2c;
+  --color-mist: #e8eef2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}

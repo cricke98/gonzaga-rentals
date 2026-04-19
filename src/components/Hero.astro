@@ -1,0 +1,72 @@
+---
+---
+<section class="relative min-h-screen flex items-center bg-[#2a3f50] overflow-hidden">
+  <!-- Subtle texture overlay -->
+  <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23f7f3ee\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#b5541c] mb-6">Gonzaga-Area Rentals · Spokane, WA</p>
+      <h1 class="text-5xl md:text-6xl font-light text-[#f7f3ee] leading-[1.1] mb-8" style="font-family: 'Fraunces', serif;">
+        A home near<br/>
+        <em class="font-normal italic text-[#ede7dc]">campus</em><br/>
+        you can trust.
+      </h1>
+      <p class="text-[#c8d8e0] text-lg font-light leading-relaxed mb-10 max-w-md">
+        We've been placing students and families in quality Spokane rentals since 2008. No corporate runaround. Just honest landlords who know the neighborhood.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#properties" class="inline-block bg-[#b5541c] text-[#f7f3ee] px-8 py-4 text-sm font-medium tracking-wide hover:bg-[#c96a30] transition-colors text-center">
+          See Available Properties
+        </a>
+        <a href="#about" class="inline-block border border-[#5a7a8e] text-[#c8d8e0] px-8 py-4 text-sm font-medium tracking-wide hover:border-[#f7f3ee] hover:text-[#f7f3ee] transition-colors text-center">
+          Meet the Owners
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:block">
+      <div class="relative">
+        <!-- Property stats card -->
+        <div class="bg-[#f7f3ee]/10 backdrop-blur border border-[#5a7a8e]/30 p-8">
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <div class="text-4xl font-light text-[#f7f3ee] mb-1" style="font-family: 'Fraunces', serif;">16+</div>
+              <div class="text-xs tracking-wide text-[#9ab0bc] uppercase">Years in Spokane</div>
+            </div>
+            <div>
+              <div class="text-4xl font-light text-[#f7f3ee] mb-1" style="font-family: 'Fraunces', serif;">40+</div>
+              <div class="text-xs tracking-wide text-[#9ab0bc] uppercase">Units Managed</div>
+            </div>
+            <div>
+              <div class="text-4xl font-light text-[#f7f3ee] mb-1" style="font-family: 'Fraunces', serif;">0.4mi</div>
+              <div class="text-xs tracking-wide text-[#9ab0bc] uppercase">Closest to Campus</div>
+            </div>
+            <div>
+              <div class="text-4xl font-light text-[#f7f3ee] mb-1" style="font-family: 'Fraunces', serif;">24h</div>
+              <div class="text-xs tracking-wide text-[#9ab0bc] uppercase">Response Time</div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-[#5a7a8e]/30">
+            <div class="flex items-center gap-3">
+              <div class="flex -space-x-2">
+                {['M','S','T','A'].map(l => (
+                  <div class="w-8 h-8 rounded-full bg-[#3d5a6e] border-2 border-[#2a3f50] flex items-center justify-center text-[10px] text-[#f7f3ee]">{l}</div>
+                ))}
+              </div>
+              <p class="text-xs text-[#9ab0bc]">Trusted by <span class="text-[#f7f3ee]">200+ GU families</span> this year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#5a7a8e]">
+    <span class="text-xs tracking-widest uppercase">Scroll</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 4v16M1 13l7 7 7-7"/>
+    </svg>
+  </div>
+</section>

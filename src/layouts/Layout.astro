@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'Gonzaga Rentals — Trusted Spokane Housing Near Campus', description = 'Quality rentals near Gonzaga University. Family-owned, Spokane-rooted, student-trusted since 2008.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/gonzaga-rentals/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,140 @@
+---
+const properties = [
+  {
+    id: 1,
+    name: "The Boone Street House",
+    type: "3-Bedroom House",
+    price: "$1,850/mo",
+    distance: "0.4 mi to campus",
+    available: "August 2025",
+    features: ["Covered parking", "Fenced yard", "Washer/dryer", "Updated kitchen"],
+    description: "A classic Gonzaga-area bungalow on a quiet tree-lined block. Three generous bedrooms, a full dining room, and a backyard porch that's earned a few late-night study sessions.",
+    badge: "Popular",
+    badgeColor: "#b5541c",
+  },
+  {
+    id: 2,
+    name: "Hamilton Court #4",
+    type: "2-Bedroom Apartment",
+    price: "$1,295/mo",
+    distance: "0.6 mi to campus",
+    available: "July 2025",
+    features: ["On-site laundry", "Off-street parking", "Heat included", "Quiet building"],
+    description: "A well-maintained upper-floor apartment in a small six-unit building. Bright south-facing windows, updated bathroom, and a landlord who actually answers the phone.",
+    badge: "Heat Included",
+    badgeColor: "#3d5a6e",
+  },
+  {
+    id: 3,
+    name: "Standard Ave Studio",
+    type: "Studio Apartment",
+    price: "$895/mo",
+    distance: "0.9 mi to campus",
+    available: "June 2025",
+    features: ["All utilities included", "Bike storage", "Walk to Safeway", "Internet ready"],
+    description: "Everything you need, nothing you don't. A clean, quiet studio with all utilities covered. Perfect for a focused grad student or someone who just wants simple done right.",
+    badge: "All Utilities",
+    badgeColor: "#3d5a6e",
+  },
+  {
+    id: 4,
+    name: "The Corkery House",
+    type: "4-Bedroom House",
+    price: "$2,400/mo",
+    distance: "0.5 mi to campus",
+    available: "August 2025",
+    features: ["Two full baths", "Large living room", "Two-car garage", "Modern appliances"],
+    description: "One of our most sought-after houses. Four bedrooms across two floors, two full baths, and a living room big enough for everyone. A perennial favorite with GU seniors.",
+    badge: "Most Space",
+    badgeColor: "#b5541c",
+  },
+  {
+    id: 5,
+    name: "Nora Ave 1-Bedroom",
+    type: "1-Bedroom Apartment",
+    price: "$1,050/mo",
+    distance: "0.7 mi to campus",
+    available: "Available Now",
+    features: ["Pet friendly", "In-unit laundry", "Private entrance", "Covered deck"],
+    description: "A charming ground-floor apartment with its own entrance and a covered porch. Pet-friendly, in-unit laundry, and a private feel that's rare at this price point.",
+    badge: "Pet Friendly",
+    badgeColor: "#5a7a8e",
+  },
+  {
+    id: 6,
+    name: "Pearl Street Flat",
+    type: "2-Bedroom Apartment",
+    price: "$1,395/mo",
+    distance: "0.8 mi to campus",
+    available: "August 2025",
+    features: ["Hardwood floors", "High ceilings", "Dedicated parking", "Sunlit rooms"],
+    description: "A top-floor flat in a classic Spokane craftsman-conversion building. Original hardwood floors, high ceilings, and light that reminds you why people love this city.",
+    badge: null,
+    badgeColor: null,
+  },
+];
+---
+
+<section id="properties" class="py-24 bg-[#f7f3ee]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-16">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#b5541c] mb-4">Available Rentals</p>
+      <h2 class="text-4xl md:text-5xl font-light text-[#2a3f50] leading-tight max-w-xl" style="font-family: 'Fraunces', serif;">
+        Properties worth<br/><em>staying in.</em>
+      </h2>
+      <p class="mt-4 text-[#5a7a8e] max-w-lg">All within a mile of Gonzaga's campus. All maintained by owners who live nearby.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {properties.map(p => (
+        <div class="bg-white border border-[#ede7dc] flex flex-col hover:shadow-md transition-shadow duration-200">
+          <!-- Property image placeholder with character -->
+          <div class="h-44 bg-[#e8eef2] relative flex items-end p-4">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#3d5a6e]/20 to-[#2a3f50]/40"></div>
+            <!-- SVG house illustration -->
+            <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 300 176" fill="none">
+              <rect x="60" y="80" width="180" height="96" fill="#2a3f50"/>
+              <path d="M40 80 L150 20 L260 80Z" fill="#3d5a6e"/>
+              <rect x="120" y="110" width="40" height="66" fill="#f7f3ee"/>
+              <rect x="80" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
+              <rect x="185" y="100" width="35" height="35" fill="#f7f3ee" opacity="0.6"/>
+            </svg>
+            <div class="relative z-10 flex items-end justify-between w-full">
+              <span class="text-2xl font-light text-[#f7f3ee]" style="font-family: 'Fraunces', serif;">{p.price}</span>
+              {p.badge && (
+                <span class="text-[10px] font-medium tracking-widest uppercase px-3 py-1 text-[#f7f3ee]" style={`background-color: ${p.badgeColor};`}>{p.badge}</span>
+              )}
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="mb-1 flex items-center justify-between">
+              <span class="text-[10px] tracking-widest uppercase text-[#9ab0bc]">{p.type}</span>
+              <span class="text-[10px] tracking-wide text-[#5a7a8e]">{p.distance}</span>
+            </div>
+            <h3 class="text-xl font-medium text-[#2a3f50] mb-3" style="font-family: 'Fraunces', serif;">{p.name}</h3>
+            <p class="text-sm text-[#5a6b70] leading-relaxed mb-4 flex-1">{p.description}</p>
+
+            <ul class="flex flex-wrap gap-2 mb-5">
+              {p.features.map(f => (
+                <li class="text-[11px] bg-[#e8eef2] text-[#3d5a6e] px-2 py-1">{f}</li>
+              ))}
+            </ul>
+
+            <div class="flex items-center justify-between pt-4 border-t border-[#ede7dc]">
+              <span class="text-[11px] text-[#9ab0bc] uppercase tracking-wide">Available: {p.available}</span>
+              <a href="#contact" class="text-sm text-[#b5541c] font-medium hover:underline">Inquire →</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-sm text-[#5a7a8e] mb-4">Don't see the right fit? We often have unlisted properties.</p>
+      <a href="#contact" class="inline-block border border-[#3d5a6e] text-[#3d5a6e] px-8 py-3 text-sm tracking-wide hover:bg-[#3d5a6e] hover:text-[#f7f3ee] transition-colors">
+        Ask About Other Options
+      </a>
+    </div>
+  </div>
+</section>
