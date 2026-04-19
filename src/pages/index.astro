@@ -3,10 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Properties from '../components/Properties.astro';
-import About from '../components/About.astro';
-import WhyUs from '../components/WhyUs.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -15,10 +11,13 @@ import Footer from '../components/Footer.astro';
   <main>
     <Hero />
     <Properties />
-    <About />
-    <WhyUs />
-    <Testimonials />
-    <Contact />
+    <section id="contact" class="py-16 bg-[#2a3f50] text-center">
+      <p class="text-[#c8d8e0] mb-6 text-lg">Ready to find your place near campus?</p>
+      <a href="mailto:guhouses@gmail.com" class="inline-block bg-[#b5541c] text-[#f7f3ee] px-10 py-4 text-sm font-medium tracking-wide hover:bg-[#c96a30] transition-colors">
+        Email Us
+      </a>
+      <p class="text-[#9ab0bc] text-sm mt-4">guhouses@gmail.com</p>
+    </section>
   </main>
   <Footer />
 </Layout>

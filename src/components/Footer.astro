@@ -18,12 +18,8 @@
       <div>
         <p class="text-[#f7f3ee] text-xs tracking-widest uppercase mb-4">Navigate</p>
         <ul class="space-y-2">
-          {['#properties|Properties', '#about|About Us', '#why-us|Why Us', '#testimonials|Reviews', '#contact|Contact'].map(item => {
-            const [href, label] = item.split('|');
-            return (
-              <li><a href={href} class="text-sm text-[#9ab0bc] hover:text-[#f7f3ee] transition-colors">{label}</a></li>
-            );
-          })}
+          <li><a href="#properties" class="text-sm text-[#9ab0bc] hover:text-[#f7f3ee] transition-colors">Properties</a></li>
+          <li><a href="#contact" class="text-sm text-[#9ab0bc] hover:text-[#f7f3ee] transition-colors">Contact</a></li>
         </ul>
       </div>
 
